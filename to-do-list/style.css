@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg,#152677,pink);
+    padding: 10px;
+}
+.to-do-app{
+    width: 100%;
+    max-width: 550px;
+    background: white;
+    margin: 100px auto 20px;
+    padding: 40px 30px  70px;
+    border-radius: 10px;
+}
+.to-do-app h1{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+
+}
+
+.to-do-app h1  img{
+    width: 30px;
+    margin-left: 20px;
+}
+
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(212, 212, 212);
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 1rem;
+}
+button{
+    border: none;
+    outline: none;
+    padding: 16px 40px;
+    background:#ff5945;
+    color:white ;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 10px 8px 12px 50px ;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 20px;
+    background-image: url(https://www.freepnglogos.com/uploads/circle-png/round-png-circle-empty-download-19.png);
+    background-size: cover;
+    background-position: center;
+    top: 7px;
+    left: 19px;
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+
+}
+
+ul li.checked::before{
+    background-image: url(data:image/png;base64,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);
+}
+
+
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+
+ul li span:hover{
+    background: #edeef0;
+}
